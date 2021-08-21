@@ -1,0 +1,210 @@
+@charset "UTF-8"
+
+@import url('https://fonts.googleapis.com/css2? family = Bebas + Neue & display = swap');  /*foi pega do google fontes, usando o incorporamento do site lá.*/
+
+@font-face {                    /*usado para quando a fonte desejada estiver baixada no seu pc, onde o 1 está o nome que será chamada, o 2 - scr:url(é onde o arquivo baixado está) o 'format(é o estilo da font).*/
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root{             /*pseudoclasse que vai guardar suas "váriaveis" podendo utilizar as cores em qualquer momento da sua criação, na montagem se começa utilizando primeiro os "--nome: algo"*/
+    --cor0: #c5ebd6;
+    --cor01: #79B6FC;
+    --cor02: #51A1FA;
+    --cor03: #287EE0;
+    --cor04: #1F62AD;
+    --cor05:  #113761;
+
+    --fonte-padrao: arial, helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+
+* {                                     /*configurações globais que vai ser usado em todos as tags do documento.*/
+    margin: 0px;                        /*Todos os elementos terão margin e padding 0px.*/
+    padding: 0px;                                               
+}
+
+body {
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+
+header{
+    background-image: linear-gradient(to bottom, var(--cor03), var(--cor05));
+    min-height: 150px;                      /*tamanho da altura.*/
+    text-align: center;
+    padding-top: 40px;                      /*aumentar a parte de cima do titulo*/
+}
+
+header > h1{
+    font-family: 'bebas Neue', cursive;
+    color: white;
+    font-size: 3em;
+    margin-bottom: 15px;            /*criando um afastamento do titulo com o <p>*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.658);
+    font-family: var(--fonte-android);
+}
+
+header > p{
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;                   /*aumentando o tamanho da fonte.*/
+    color: white;
+    max-width: 600px;                    /*para deixar o site adaptavel e não quebrar o texto.*/
+    margin: auto;                       /*para ficar sempre centralizado*/
+    padding-right: 10px;                /*essas duas servem para deixar o texto separado da barra lateral.*/
+    padding-left: 10px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.658);
+    padding-bottom: 50px;
+}
+
+nav{
+    background-color: var(--cor05);
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.329);
+    padding-bottom: 5px;
+}
+
+nav a{
+    color: white;
+    padding: 7px;                       /*serve para da uma afastada de cada item*/
+    text-decoration: none;              /*serve para tirar o sublinhado*/
+    font-weight: bold;                  /*deixar as letras em negrito e mais destacado*/
+    transition-duration: 0.5s;          /*quando o mouse passar por cima, vai levar um segundo de transição.*/
+}
+
+nav a:hover{
+    background-color: var(--cor03);
+    color: var(--cor05);
+    border-radius: 5px;
+    text-decoration: underline;
+}
+
+main{
+    background-color: white;
+    margin: auto;                       /*deixar o site centralizado dependendo do dispositivo*/
+    margin-bottom: 30px;                /* Para deixar o rodapé afastado do conteúdo.*/
+    min-width: 300px;                   /* deixa o site adaptavel a dispositivos menores.*/
+    max-width: 1000px;                  /* o site para de crescer qndo chegar em dispositivos maiores que:.*/
+    padding: 20px;                      /*para deixar o conteúdo afastado da borda.*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);    /*sombra em volta do main, não tem deslocamento nem vertical nem horizontal.*/
+    border-bottom-left-radius: 10px;          /*fizemos configurações especificas pois, só queremos arredondar a parte de baixo*/
+    border-bottom-right-radius: 10px;
+}
+
+main h1 {
+    font-family: var(--fonte-android);
+    color: var(--cor05);
+}
+
+main h2{
+    font-family: var(--fonte-android);
+    color: var(--cor05);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor01), transparent);         /*faz um deagrade para a direita da cor 01 até a transparente.*/
+    text-indent: 8px;
+}
+
+main p{
+    margin: 15px 0px;               /*separar o texto dos titulos.*/
+    text-align: justify;            /*deixa o texto ajustado dos lados.*/
+    text-indent: 30px;              /*deixa uma pequena margem para o inicio de paragrafo*/
+    line-height: 2em;               /*altura das linhas uma das outras.*/
+    font-size: 1em;                 /*tamanho da letras.*/
+}   
+main strong{
+    color: var(--cor04);
+    font-weight: bold;
+}
+
+main img{           /*faz com que a imagens se expremam e se adaptem legal.*/
+    width: 100%;
+}
+
+main .pequena{     /*a iamgem estava muito grande e foi "diminuida ou adaptavél" para não ficar tão grande.*/
+    max-width: 350px;
+    display: block;           /*como uma img não é um bloco, precisa desse comando para a "margin: auto;" funcionar.*/
+    margin: auto;           /*para centralizar a imagem.*/
+}
+
+.external::after {
+    content: '\00A0\🔗';
+}
+main a{
+    font-weight: bolder;
+    background-color: var(--cor01);
+    color: var(--cor05);
+    padding: 2px 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor04);
+}
+
+.video{
+    position: relative;
+    background-color: var(--cor04);
+    
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom:  15px;
+    padding-bottom: 59%;
+}
+.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside h3{
+    background-color: var(--cor04);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+}
+aside strong{
+    color: var(--cor05);
+}
+aside {
+    background-color: var(--cor01);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgb(0 0 0 / 28%);
+}
+
+ul{
+    list-style-type: '✔️\0020\0020';                /*deixa as listas com o "✔️" e os "0020" significa espaço ou bloco em branco.*/
+    columns: 2;                                     /*Separa os <li> em iguais ou quase, deixando eles de forma alinhada.*/
+    list-style-position: inside;                    /*deixar os marcados na parte interna da caixa, dentro do bloco aside */
+}                                                   /*pode conter o outside que deixa a marcação de fora do bloco.*/
+
+footer{
+    background-color: var(--cor05);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a{
+    font-weight: bolder;
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover{
+    color: var(--cor02);
+    text-decoration: underline;
+}
+footer p{
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 1em;
+}
